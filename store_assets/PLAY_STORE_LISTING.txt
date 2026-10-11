@@ -1,0 +1,168 @@
+========================================================================
+ANIEYE - GOOGLE PLAY STORE LISTING CONTENT
+========================================================================
+Copy/paste these values directly into the Play Console.
+Character limits are noted; all values are within limits.
+
+========================================================================
+APP IDENTITY
+========================================================================
+App name (max 30):            AniEye
+                              (6 characters)
+
+Package name (permanent):     com.animeye.watchanimetv
+
+Default language:             English (United States) - en-US
+
+App category:                 Entertainment  (or "Tools")
+Tags (max 5):                 Anime, Watch order, Guide, Offline, Reference
+
+Contact email:                iam.nmzar@gmail.com
+Contact website (optional):   https://github.com/codex-zubair
+Contact phone (optional):     (leave blank)
+
+Privacy policy URL:           https://codex-zubair.github.io/all_privacy_policy/animeye/
+
+========================================================================
+STORE LISTING TEXT
+========================================================================
+
+--- Short description (max 80) ---
+Which order should I watch it? Offline anime watch-order guide. No ads.
+(68 characters)
+
+--- Full description (max 4000) ---
+AniEye answers a question every fan faces: "What order should I watch this
+in?" It is a quick, fully offline reference for the recommended viewing order
+of well-known anime series, from long-running shows to multi-arc
+universes.
+
+Pick a series, and AniEye shows its ordered watch list — the seasons, arcs,
+films and optional entries, numbered in the order you should watch them. No
+internet, no accounts, no ads.
+
+WHAT'S INSIDE
+- 14 popular series with step-by-step watch orders.
+- Over 85 numbered watch steps in total.
+- Order types labelled clearly: release order, season order, part order,
+  saga order and more.
+- Optional steps (films, OVAs, spinoffs) flagged so you can skip them.
+- Short notes explaining each step.
+- Instant search to find a series fast.
+
+FEATURED SERIES
+Monogatari, Fate, Haruhi Suzumiya, JoJo's Bizarre Adventure, Gintama,
+One Piece, Studio Ghibli, Mob Psycho 100, Oregairu, Steins;Gate,
+Neon Genesis Evangelion, Naruto, Attack on Titan and Frieren.
+
+HOW IT WORKS
+1. Open AniEye and browse or search for a series.
+2. Tap it to see its numbered watch order.
+3. Follow the steps top to bottom; skip anything marked Optional.
+
+PRIVATE BY DESIGN
+- No internet permission at all — the app cannot go online.
+- Zero Android permissions requested.
+- No ads, no analytics, no trackers.
+- The whole guide is bundled inside the app.
+- The app stores no data at all — nothing is saved.
+
+EDITORIAL CONTENT
+Watch orders are original editorial suggestions, not official guides. They
+are provided to help you enjoy a series in a sensible order. AniEye contains
+no video, audio, manga or other copyrighted media, and no verbatim
+quotations, dialogue or lyrics.
+
+Open source
+AniEye's source code is public at
+https://github.com/codex-zubair/AniEye
+
+Built by codex-zubair.
+
+========================================================================
+DATA SAFETY FORM (Play Console -> App content -> Data safety)
+========================================================================
+Answer exactly as follows.
+
+Does your app collect or share any of the required user data types?
+  -> No
+
+Is all of the user data collected by your app encrypted in transit?
+  -> N/A (no data collected) - if forced, answer "No".
+
+Do you provide a way for users to request that their data is deleted?
+  -> No (the app stores no data at all).
+
+Data types: leave every category unchecked.
+
+Additional:
+  - "Is your app's data collection practice covered by a privacy policy?"
+    -> Yes, provide the privacy policy URL above.
+  - "Has your app been independently validated?" -> No.
+
+Result summary shown to users: "No data collected" and "No data shared".
+This matches the app: no permissions, no INTERNET permission, no storage.
+
+========================================================================
+APP CONTENT QUESTIONNAIRES
+========================================================================
+1. Privacy policy   -> Provide the URL above.
+2. Ads              -> No, the app does not contain ads.
+3. App access       -> All functionality is available without restrictions.
+4. Content rating   -> Category "Utility, Productivity, Communication, or
+                       Other"; answer "No" to every sensitive question.
+                       Expected: Everyone / 3+.
+5. Target audience  -> 13+ (or 18+). Do NOT select under 13.
+6. News / COVID / Government / Financial / Health -> No.
+7. Data safety      -> See the Data Safety section above.
+
+========================================================================
+PERMISSIONS DECLARATION
+========================================================================
+AniEye declares NO Android permissions. It explicitly REMOVES the network
+permissions so the app cannot go online:
+  - android.permission.INTERNET            (tools:node="remove")
+  - android.permission.ACCESS_NETWORK_STATE (tools:node="remove")
+
+No location, camera, microphone, storage, contacts, phone, SMS or AD_ID
+permission. The Play Console will not prompt for permission declarations, and
+the app qualifies for the "No data collected" label.
+
+========================================================================
+STORE ASSETS (files provided)
+========================================================================
+App icon (512 x 512 PNG, 32-bit):
+  assets/images/play_icon_512.png
+
+Feature graphic (1024 x 500 PNG):
+  store_assets/graphics/feature_graphic_1024x500.png
+
+Phone screenshots (1080 x 1920 PNG, minimum 2 required, 8 max):
+  store_assets/screenshots/01_series_list.png
+  store_assets/screenshots/02_watch_order.png
+  store_assets/screenshots/03_search.png
+  store_assets/screenshots/04_gintama_order.png
+  store_assets/screenshots/05_about_privacy.png
+
+Optional (not required): tablet screenshots.
+
+========================================================================
+RELEASE NOTES (for "What's new" - first release)
+========================================================================
+First release.
+
+- Offline anime watch-order guide with 14 popular series.
+- 85+ numbered watch steps with order types and optional entries.
+- Instant search; clean dark interface.
+- No permissions, no ads, no internet, no data stored.
+
+========================================================================
+VERSIONING (for future updates)
+========================================================================
+Current: versionName 1.0.0, versionCode 1.
+To ship an update, edit pubspec.yaml:
+  version: 1.0.1+2        # name 1.0.1, code 2 (code must always increase)
+Then rebuild:
+  flutter build appbundle --release
+and upload the new AAB to the same app in Play Console.
+========================================================================

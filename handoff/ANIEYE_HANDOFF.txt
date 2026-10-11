@@ -1,0 +1,141 @@
+========================================================================
+ANIEYE - WORK PROGRESS / HANDOFF
+========================================================================
+App:        AniEye
+Subtitle:   100% Offline Anime Watch-Order Helper
+Company:    codex-zubair
+Package:    com.animeye.watchanimetv   (client-required package name)
+Repo:       git@github.com:codex-zubair/AniEye.git
+Platform:   Android only (Play Store)
+Version:    1.0.0+1
+Last updated: 2026-10-11
+
+========================================================================
+1. GOAL
+========================================================================
+Ship a very simple, easy-to-publish, fully offline anime watch-order helper on
+the client-required package com.animeye.watchanimetv. Zero permissions, zero
+network, no ads, no analytics, stores no data — the lightest possible Play
+review.
+
+========================================================================
+2. STATUS
+========================================================================
+DONE:
+  [x] Flutter project scaffolded (org com.animeye, project watchanimetv,
+      android only) -> applicationId com.animeye.watchanimetv
+  [x] Pure-Dart engine: lib/core/{app_info,series_order,eye_data,
+      eye_engine}.dart  (catalogue: 14 series, 89 watch steps)
+  [x] State: state/eye_state.dart (ChangeNotifier + provider)
+  [x] UI: Series list (search), Detail (numbered watch order + optional
+      steps), About (privacy link)
+  [x] NO permissions; INTERNET + ACCESS_NETWORK_STATE removed at build time
+  [x] Stores NO data at all (pure in-memory session state)
+  [x] flutter analyze: 0 issues
+  [x] flutter test: 12/12 passed
+  [x] Branding: pure-python eye+play icon generator; launcher icons, adaptive
+      icon, splash, Play 512 icon
+  [x] Store graphics: feature graphic 1024x500 + 5 phone screenshots 1080x1920
+  [x] Release signing keystore + build.gradle.kts release config + R8 rules
+  [x] Release AAB (49.6 MB) + APK (49.5 MB) built and signed, jar verified
+  [x] Keystore + credentials backed up to
+      /mnt/external_disk/ALL-APP-KEYS/AniEye/
+  [x] Privacy policy LIVE (HTTP 200):
+      https://codex-zubair.github.io/all_privacy_policy/animeye/
+  [x] Installed on device (Samsung SM-S908U) and smoke-tested: list, detail,
+      search, about verified
+  [x] Store listing + publishing guide written
+PENDING:
+  [ ] git init + push to github.com/codex-zubair/AniEye
+  [ ] Play Console: create app, upload AAB, store listing, data safety
+
+========================================================================
+3. KEY FACTS / DECISIONS
+========================================================================
+- Name: AniEye (store search showed no exact match; a formal trademark check
+  is still advisable before publishing).
+- Package: com.animeye.watchanimetv (client requirement; permanent).
+- Content: 100% original editorial watch orders + short notes. NO verbatim
+  quotes/lyrics/media.
+- No permissions. No INTERNET. No ads, no analytics. NO stored data.
+- Scope v1.0: single-purpose offline watch-order reference.
+
+========================================================================
+4. PROJECT LAYOUT
+========================================================================
+lib/
+  core/
+    app_info.dart      brand/links constants (incl. privacy URL)
+    series_order.dart  WatchStep + SeriesOrder models
+    eye_data.dart      the 14-series watch-order catalogue
+    eye_engine.dart    lookup + search logic
+  state/
+    eye_state.dart     ChangeNotifier
+  screens/
+    root_shell.dart, series_list_screen.dart, detail_screen.dart,
+    about_screen.dart
+  widgets/  brand.dart
+  theme/    app_theme.dart
+test/       eye_engine_test, widget_test
+tool/       gen_icons.py, make_graphics.py
+privacy-policy/index.html
+store_assets/  PLAY_STORE_LISTING.txt, PUBLISHING_GUIDE.txt,
+               graphics/, screenshots/
+
+========================================================================
+5. COMMANDS
+========================================================================
+Setup:   cd /home/codex-zubair/Desktop/APPS/animeye && flutter pub get
+Quality: flutter analyze && flutter test
+Build:   flutter build appbundle --release
+         flutter build apk --release
+Assets:  python3 tool/gen_icons.py
+         dart run flutter_launcher_icons
+         dart run flutter_native_splash:create
+         python3 tool/make_graphics.py
+Git:     git remote add origin git@github.com:codex-zubair/AniEye.git
+         git push -u origin main
+
+========================================================================
+6. SIGNING
+========================================================================
+Keystore: android/animeye-release.jks  (git-ignored)
+Alias:    animeye
+Pass:     animeye2026key   (in android/key.properties, git-ignored)
+DN:       CN=codex-zubair, OU=Mobile, O=codex-zubair, L=City, ST=State, C=US
+SHA1:     7D:7B:A6:44:7D:4F:63:77:1F:DF:73:66:F4:87:2A:46:1B:5F:7C:9D
+SHA256:   E6:3D:78:0B:DE:83:62:94:B1:E9:BC:6D:99:07:7D:3F:50:A4:76:2C:01:
+          10:3D:59:BB:9F:B7:61:A6:05:55:15
+
+========================================================================
+7. PRIVACY POLICY
+========================================================================
+File:  privacy-policy/index.html
+URL:   https://codex-zubair.github.io/all_privacy_policy/animeye/ (LIVE 200)
+AppInfo.privacyPolicyUrl in lib/core/app_info.dart is set to this URL.
+
+========================================================================
+8. VERIFIED WORKING (this session)
+========================================================================
+- flutter analyze: No issues found
+- flutter test: 12/12 passed
+- flutter build appbundle --release: SUCCESS (49.6 MB), jar verified
+- flutter build apk --release: SUCCESS (49.5 MB)
+- Device smoke test: install -> list (14 series / 89 steps) -> detail
+  (numbered watch order) -> search -> about.
+- APK permissions: only the internal DYNAMIC_RECEIVER permission; no
+  INTERNET, no ACCESS_NETWORK_STATE.
+
+========================================================================
+9. CHANGELOG
+========================================================================
+2026-10-11  Initial build.
+  - Scaffolded AniEye on com.animeye.watchanimetv.
+  - Wrote engine, 14-series watch-order catalogue, state, UI.
+  - 12 tests passing; analyze clean.
+  - Branding + store graphics generated.
+  - Release AAB + APK built and signed; keystore backed up.
+  - Privacy policy published (live 200).
+  - Installed and smoke-tested on device.
+  - Store listing, publishing guide and this handoff written.
+========================================================================
